@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1280, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>صبح دانش</title>
     
     <!-- فونت لاله‌زار -->
@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <style>
-        body {
+        body, html {
+            width: 1280px;
+            overflow-x: auto; /* برای اسکرول افقی در صورت نیاز */
             margin: 0;
             padding: 0;
             background: #000;
@@ -517,7 +519,7 @@
             </button>
         </div>
 
-        <!-- دکمه‌های وسط با لینک‌های مورد نظر -->
+        <!-- دکمه‌های وسط با لینک -->
         <div class="middle-buttons">
             <button class="middle-btn" onclick="window.open('https://drive.google.com/file/d/1doulozm0rCNtp33L_7hH-w5qzUaXk78G/view?usp=drive_link', '_blank')">
                 <i class="fas fa-download"></i> دانلود هوش مصنوعی
