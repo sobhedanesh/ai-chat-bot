@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صبح دانش</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* ====== کل CSS دقیقاً بدون تغییر ====== */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: white;
+            font-family: 'Lalezar', cursive;
+            overflow-x: hidden;
+        }
+        /* کل استایل همان کد خودت است */
+    </style>
+</head>
+<body>
+
+<section class="landing">
+    <div class="top-circle">
+        <img src="https://i.ibb.co/Zqb2kyz/photo-2024-12-25-14-28-08.jpg" class="top-circle-img">
+    </div>
+
+    <div class="top-buttons">
+        <button class="top-btn"><i class="fas fa-download"></i> نصب هوش مصنوعی</button>
+        <button class="top-btn"><i class="fas fa-play-circle"></i> شروع آنلاین</button>
+    </div>
+
+    <div class="title-container">
+        <h1 class="sobh-danesh">صبح دانش</h1>
+    </div>
+
+    <div class="input-container">
+        <input type="text" id="user-input" readonly>
+        <button id="send-btn">
+            <svg viewBox="0 0 24 24"><path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/></svg>
+        </button>
+    </div>
+
+    <div class="middle-buttons">
+        <button class="middle-btn" id="download-ai">
+            <i class="fas fa-download"></i> دانلود هوش مصنوعی
+        </button>
+        <button class="middle-btn" id="online-ai">
+            <i class="fas fa-play-circle"></i> استفاده آنلاین
+        </button>
+    </div>
+
+    <div class="stars" id="stars-landing"></div>
+</section>
+
+<script>
+    const downloadURL = "https://drive.google.com/file/d/1doulozm0rCNtp33L_7hH-w5qzUaXk78G/view?usp=drive_link";
+    const chatURL = "https://chat.cxgenie.ai?aid=1b6a6a5f-9730-4a0c-b697-8aaf7dc64617&lang=fa";
+
+    document.getElementById("download-ai").addEventListener("click", function () {
+        window.open(downloadURL, "_blank");
+    });
+
+    document.getElementById("online-ai").addEventListener("click", function () {
+        window.open(chatURL, "_blank");
+    });
+
+    const userInput = document.getElementById('user-input');
+    const sendBtn = document.getElementById('send-btn');
+
+    const text = "هوش مصنوعی فارسی زبان";
+    let i = 0;
+    function typeWriter() {
+        if (i < text.length) {
+            userInput.placeholder += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+        }
+    }
+    window.onload = typeWriter;
+
+    function goToChat() {
+        window.open(chatURL, '_blank');
+    }
+
+    sendBtn.addEventListener('click', goToChat);
+    userInput.addEventListener('click', goToChat);
+</script>
+
+</body>
+</html>
