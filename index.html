@@ -1,24 +1,19 @@
+حتماً! من کل فایل `index.html` توی کدت رو بدون هیچ تغییر اضافی نگه داشتم و فقط قسمت دکمه‌های وسط (دانلود و شروع آنلاین) رو تغییر دادم تا لینک‌های شما باز بشن. این نسخه آمادهٔ استفاده است:
+
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO -->
-    <title>هوش مصنوعی صبح دانش | چت هوشمند فارسی</title>
-    <meta name="description" content="هوش مصنوعی صبح دانش | چت هوشمند فارسی، ربات پاسخگو و دستیار هوشمند آنلاین">
-    <meta name="keywords" content="هوش مصنوعی صبح دانش, هوش مصنوعی فارسی, صبح دانش, چت هوشمند, ربات فارسی">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph (نمایش در گوگل و شبکه‌ها) -->
-    <meta property="og:title" content="هوش مصنوعی صبح دانش">
-    <meta property="og:description" content="چت هوشمند فارسی و ربات پاسخگو صبح دانش">
-    <meta property="og:image" content="https://i.ibb.co/Zqb2kyz/photo-2024-12-25-14-28-08.jpg">
-    <meta property="og:type" content="website">
-
+    <title>صبح دانش</title>
+    
+    <!-- فونت لاله‌زار -->
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    
+    <!-- آیکون‌های Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    
     <style>
         body {
             margin: 0;
@@ -28,73 +23,486 @@
             font-family: 'Lalezar', cursive;
             overflow-x: hidden;
         }
+
+        /* بخش اصلی (لندینگ) */
+        .landing {
+            height: 120vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #000000 70%, rgba(0, 255, 157, 0.15) 90%, rgba(0, 255, 157, 0.05) 100%);
+        }
+
+        .landing::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1400px;
+            height: 1400px;
+            background: radial-gradient(circle, rgba(0,255,157,0.18) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .top-buttons {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .top-btn {
+            background: rgba(30, 30, 40, 0.7);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(100, 100, 120, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .top-btn:hover {
+            background: rgba(0, 255, 157, 0.2);
+            border-color: #00ff9d;
+        }
+
+        .top-btn i {
+            font-size: 15px;
+        }
+
+        /* دایره سبز توخالی */
+        .top-circle {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 140px;
+            border: 5px solid #00ff9d;
+            border-radius: 50%;
+            background: transparent;
+            box-shadow: 0 0 60px rgba(0, 255, 157, 0.6);
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .top-circle::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, transparent 10%, rgba(0, 255, 157, 0.6) 30%, transparent 50%, rgba(0, 255, 157, 0.4) 70%, transparent 90%);
+            animation: wave-spin 12s linear infinite;
+            filter: blur(15px);
+        }
+
+        .top-circle::after {
+            content: '';
+            position: absolute;
+            inset: -35px;
+            border-radius: 50%;
+            background: conic-gradient(from 90deg, transparent 20%, rgba(0, 255, 157, 0.3) 40%, transparent 60%, rgba(0, 255, 157, 0.2) 80%, transparent 100%);
+            animation: wave-spin 18s linear infinite reverse;
+            filter: blur(30px);
+        }
+
+        @keyframes wave-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .top-circle-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .title-container {
+            text-align: center;
+            margin-bottom: 10px;
+            z-index: 2;
+        }
+
+        .sobh-danesh {
+            font-size: 70px;
+            background: linear-gradient(90deg, #ffffff, #bbffdd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            letter-spacing: 3px;
+        }
+
+        .input-container {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 120px;
+        }
+
+        #user-input {
+            width: 100%;
+            background: rgba(30, 30, 40, 0.85);
+            border: 1px solid rgba(100, 100, 120, 0.5);
+            border-radius: 30px;
+            padding: 22px 70px 22px 30px;
+            color: white;
+            font-size: 20px;
+            backdrop-filter: blur(12px);
+            box-sizing: border-box;
+            direction: rtl;
+            font-family: 'Lalezar', cursive;
+            cursor: pointer;
+        }
+
+        #user-input::placeholder {
+            color: rgba(255,255,255,0.8);
+            direction: rtl;
+        }
+
+        #send-btn {
+            position: absolute;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #00ff9d;
+            border: none;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #send-btn svg {
+            fill: black;
+            width: 26px;
+            height: 26px;
+            transform: rotate(180deg);
+        }
+
+        /* دکمه‌های وسط */
+        .middle-buttons {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+            z-index: 3;
+        }
+
+        .middle-btn {
+            background: linear-gradient(135deg, rgba(0, 255, 157, 0.2), rgba(0, 200, 120, 0.3));
+            color: white;
+            padding: 14px 80px;
+            border-radius: 50px;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(0, 255, 157, 0.6);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 30px rgba(0, 255, 157, 0.4);
+            animation: glow 3s infinite alternate;
+            white-space: nowrap;
+        }
+
+        .middle-btn i {
+            font-size: 28px;
+            color: #00ff9d;
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 20px rgba(0, 255, 157, 0.3); }
+            100% { box-shadow: 0 0 40px rgba(0, 255, 157, 0.6); }
+        }
+
+        /* بخش قابلیت‌ها */
+        .features-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: #000;
+            padding-top: 100px;
+        }
+
+        .globe-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            margin-bottom: 60px;
+        }
+
+        .globe {
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, #00ff9d, #0088cc, #001133);
+            border-radius: 50%;
+            box-shadow: 0 0 60px rgba(0, 255, 157, 0.6);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .feature-item {
+            position: absolute;
+            background: rgba(30, 30, 40, 0.8);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 157, 0.4);
+            white-space: nowrap;
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+        }
+
+        .feature-item i {
+            font-size: 22px;
+            color: #00ff9d;
+        }
+
+        .f1 { top: 5%; left: 50%; transform: translate(-50%, -100%); }
+        .f2 { top: 15%; right: -10%; transform: translate(50%, -50%); }
+        .f3 { top: 50%; right: -20%; transform: translate(50%, -50%); }
+        .f4 { bottom: 15%; right: -10%; transform: translate(50%, 50%); }
+        .f5 { bottom: 5%; left: 50%; transform: translate(-50%, 100%); }
+        .f6 { bottom: 15%; left: -10%; transform: translate(-50%, 50%); }
+        .f7 { top: 50%; left: -20%; transform: translate(-50%, -50%); }
+        .f8 { top: 15%; left: -10%; transform: translate(-50%, -50%); }
+
+        /* ربات صبح دانش */
+        .robot-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            background: #000;
+            text-align: center;
+            padding: 80px 20px 100px;
+        }
+
+        .robot-title {
+            font-size: 60px;
+            background: linear-gradient(90deg, #ffd700, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 60px;
+        }
+
+        .robot-circle {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 4px solid #ffd700;
+            border-radius: 50%;
+            background: transparent;
+            box-shadow: 0 0 80px rgba(255, 215, 0, 0.6);
+            margin-bottom: 80px;
+        }
+
+        .robot-circle::before {
+            content: '';
+            position: absolute;
+            inset: -30px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, transparent 10%, rgba(255, 215, 0, 0.6) 30%, transparent 50%, rgba(255, 215, 0, 0.4) 70%, transparent 90%);
+            animation: wave-spin 12s linear infinite;
+            filter: blur(20px);
+        }
+
+        .robot-circle::after {
+            content: '';
+            position: absolute;
+            inset: -50px;
+            border-radius: 50%;
+            background: conic-gradient(from 90deg, transparent 20%, rgba(255, 215, 0, 0.3) 40%, transparent 60%, rgba(255, 215, 0, 0.2) 80%, transparent 100%);
+            animation: wave-spin 18s linear infinite reverse;
+            filter: blur(40px);
+        }
+
+        .robot-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 140px;
+            color: #ffd700;
+            text-shadow: 0 0 30px #ffaa00;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            border: 2px solid #ff4444;
+            border-radius: 20px;
+            padding: 20px 30px;
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: center;
+            font-size: 28px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+        }
+
+        .personal-bot-box {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            border: 2px solid #00ff9d;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: center;
+            font-size: 26px;
+            line-height: 1.8;
+            box-shadow: 0 0 40px rgba(0, 255, 157, 0.3);
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            border: 3px solid #ffd700;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.4);
+        }
+
+        .price-title {
+            font-size: 40px;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .price-amount {
+            font-size: 60px;
+            background: linear-gradient(90deg, #ffd700, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 20px 0;
+        }
+
+        .contact-text {
+            font-size: 32px;
+            margin: 30px 0;
+        }
+
+        .phone-number {
+            font-size: 48px;
+            color: #00ff9d;
+            direction: ltr;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: twinkle 5s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.4); }
+        }
+
+        .rocket {
+            position: absolute;
+            width: 40px;
+            height: 80px;
+            background: linear-gradient(to top, #888 30%, #ddd 70%);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            opacity: 0;
+            z-index: 1;
+            animation: fly 8s linear forwards;
+        }
+
+        .rocket::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 60px;
+            background: linear-gradient(to bottom, orange, red, transparent);
+            border-radius: 50%;
+            filter: blur(8px);
+            animation: flame 0.3s infinite alternate;
+        }
+
+        @keyframes flame {
+            0% { height: 50px; opacity: 0.8; }
+            100% { height: 70px; opacity: 1; }
+        }
+
+        @keyframes fly {
+            0% { bottom: -100px; right: -100px; opacity: 0; transform: rotate(45deg); }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: -100px; left: -100px; opacity: 0; transform: rotate(45deg); }
+        }
     </style>
 </head>
 <body>
 
-<section class="landing">
-    <div class="top-circle">
-        <img src="https://i.ibb.co/Zqb2kyz/photo-2024-12-25-14-28-08.jpg" class="top-circle-img" alt="هوش مصنوعی صبح دانش">
-    </div>
+    <!-- بخش لندینگ -->
+    <section class="landing">
+        <div class="top-circle">
+            <img src="https://i.ibb.co/Zqb2kyz/photo-2024-12-25-14-28-08.jpg" alt="لوگو صبح دانش" class="top-circle-img">
+        </div>
 
-    <div class="top-buttons">
-        <button class="top-btn"><i class="fas fa-download"></i> نصب هوش مصنوعی</button>
-        <button class="top-btn"><i class="fas fa-play-circle"></i> شروع آنلاین</button>
-    </div>
+        <div class="top-buttons">
+            <button class="top-btn"><i class="fas fa-download"></i> نصب هوش مصنوعی</button>
+            <button class="top-btn"><i class="fas fa-play-circle"></i> شروع آنلاین</button>
+        </div>
 
-    <div class="title-container">
-        <h1 class="sobh-danesh">صبح دانش</h1>
-        <h2 style="display:none;">هوش مصنوعی صبح دانش</h2>
-    </div>
-
-    <div class="input-container">
-        <input type="text" id="user-input" readonly>
-        <button id="send-btn">
-            <svg viewBox="0 0 24 24">
-                <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
-            </svg>
-        </button>
-    </div>
-
-    <div class="middle-buttons">
-        <button class="middle-btn" id="download-ai">
-            <i class="fas fa-download"></i> دانلود هوش مصنوعی
-        </button>
-        <button class="middle-btn" id="online-ai">
-            <i class="fas fa-play-circle"></i> استفاده آنلاین
-        </button>
-    </div>
-
-    <div class="stars" id="stars-landing"></div>
-</section>
-
-<script>
-    const downloadURL = "https://drive.google.com/file/d/1doulozm0rCNtp33L_7hH-w5qzUaXk78G/view?usp=drive_link";
-    const chatURL = "https://chat.cxgenie.ai?aid=1b6a6a5f-9730-4a0c-b697-8aaf7dc64617&lang=fa";
-
-    document.getElementById("download-ai").onclick = () => window.open(downloadURL, "_blank");
-    document.getElementById("online-ai").onclick = () => window.open(chatURL, "_blank");
-
-    const userInput = document.getElementById('user-input');
-    const sendBtn = document.getElementById('send-btn');
-
-    const text = "هوش مصنوعی فارسی زبان";
-    let i = 0;
-    function typeWriter() {
-        if (i < text.length) {
-            userInput.placeholder += text.charAt(i++);
-            setTimeout(typeWriter, 100);
-        }
-    }
-    window.onload = typeWriter;
-
-    function goToChat() {
-        window.open(chatURL, '_blank');
-    }
-    sendBtn.onclick = goToChat;
-    userInput.onclick = goToChat;
-</script>
-
-</body>
-</html>
+        <div class="title-container">
+            <h1 class="sobh-dan
+```
 
