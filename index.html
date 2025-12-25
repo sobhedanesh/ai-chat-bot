@@ -21,6 +21,7 @@
             color: white;
             font-family: 'Lalezar', cursive;
             overflow-x: hidden;
+            scroll-behavior: smooth; /* اسکرول نرم در تمام دستگاه‌ها */
         }
 
         /* بخش اصلی (لندینگ) */
@@ -46,39 +47,6 @@
             transform: translate(-50%, -50%);
             pointer-events: none;
             z-index: 1;
-        }
-
-        .top-buttons {
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            display: flex;
-            gap: 10px;
-            z-index: 3;
-        }
-
-        .top-btn {
-            background: rgba(30, 30, 40, 0.7);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(100, 100, 120, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .top-btn:hover {
-            background: rgba(0, 255, 157, 0.2);
-            border-color: #00ff9d;
-        }
-
-        .top-btn i {
-            font-size: 15px;
         }
 
         /* دایره سبز توخالی */
@@ -503,11 +471,6 @@
             <img src="https://i.ibb.co/Zqb2kyz/photo-2024-12-25-14-28-08.jpg" alt="لوگو صبح دانش" class="top-circle-img">
         </div>
 
-        <div class="top-buttons">
-            <button class="top-btn"><i class="fas fa-download"></i> نصب هوش مصنوعی</button>
-            <button class="top-btn"><i class="fas fa-play-circle"></i> شروع آنلاین</button>
-        </div>
-
         <div class="title-container">
             <h1 class="sobh-danesh">صبح دانش</h1>
         </div>
@@ -642,5 +605,6 @@
     </script>
 </body>
 </html>
+
 
 
