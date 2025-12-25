@@ -79,9 +79,10 @@
             font-size: 15px;
         }
 
+        /* دایره سبز توخالی */
         .top-circle {
             position: absolute;
-            top: 80px;
+            top: 40px;
             left: 50%;
             transform: translateX(-50%);
             width: 140px;
@@ -128,6 +129,7 @@
 
         .title-container {
             text-align: center;
+            margin-top: 180px;
             margin-bottom: 10px;
             z-index: 2;
         }
@@ -193,6 +195,7 @@
             transform: rotate(180deg);
         }
 
+        /* دکمه‌های وسط با لینک */
         .middle-buttons {
             position: absolute;
             bottom: 100px;
@@ -221,6 +224,12 @@
             white-space: nowrap;
         }
 
+        .middle-btn:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 50px rgba(0, 255, 157, 0.7);
+            background: linear-gradient(135deg, rgba(0, 255, 157, 0.4), rgba(0, 200, 120, 0.5));
+        }
+
         .middle-btn i {
             font-size: 28px;
             color: #00ff9d;
@@ -231,8 +240,257 @@
             100% { box-shadow: 0 0 40px rgba(0, 255, 157, 0.6); }
         }
 
-        /* سایر استایل‌ها بدون تغییر */
-        /* ... بخش قابلیت‌ها و ربات صبح دانش ... */
+        /* بخش قابلیت‌ها */
+        .features-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: #000;
+            padding-top: 100px;
+        }
+
+        .globe-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            margin-bottom: 60px;
+        }
+
+        .globe {
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, #00ff9d, #0088cc, #001133);
+            border-radius: 50%;
+            box-shadow: 0 0 60px rgba(0, 255, 157, 0.6);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .feature-item {
+            position: absolute;
+            background: rgba(30, 30, 40, 0.8);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 157, 0.4);
+            white-space: nowrap;
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+        }
+
+        .feature-item i {
+            font-size: 22px;
+            color: #00ff9d;
+        }
+
+        .f1 { top: 5%; left: 50%; transform: translate(-50%, -100%); }
+        .f2 { top: 15%; right: -10%; transform: translate(50%, -50%); }
+        .f3 { top: 50%; right: -20%; transform: translate(50%, -50%); }
+        .f4 { bottom: 15%; right: -10%; transform: translate(50%, 50%); }
+        .f5 { bottom: 5%; left: 50%; transform: translate(-50%, 100%); }
+        .f6 { bottom: 15%; left: -10%; transform: translate(-50%, 50%); }
+        .f7 { top: 50%; left: -20%; transform: translate(-50%, -50%); }
+        .f8 { top: 15%; left: -10%; transform: translate(-50%, -50%); }
+
+        /* بخش ربات صبح دانش */
+        .robot-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            background: #000;
+            text-align: center;
+            padding: 80px 20px 100px;
+        }
+
+        .robot-title {
+            font-size: 60px;
+            background: linear-gradient(90deg, #ffd700, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 60px;
+        }
+
+        .robot-circle {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 4px solid #ffd700;
+            border-radius: 50%;
+            background: transparent;
+            box-shadow: 0 0 80px rgba(255, 215, 0, 0.6);
+            margin-bottom: 80px;
+        }
+
+        .robot-circle::before {
+            content: '';
+            position: absolute;
+            inset: -30px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, transparent 10%, rgba(255, 215, 0, 0.6) 30%, transparent 50%, rgba(255, 215, 0, 0.4) 70%, transparent 90%);
+            animation: wave-spin 12s linear infinite;
+            filter: blur(20px);
+        }
+
+        .robot-circle::after {
+            content: '';
+            position: absolute;
+            inset: -50px;
+            border-radius: 50%;
+            background: conic-gradient(from 90deg, transparent 20%, rgba(255, 215, 0, 0.3) 40%, transparent 60%, rgba(255, 215, 0, 0.2) 80%, transparent 100%);
+            animation: wave-spin 18s linear infinite reverse;
+            filter: blur(40px);
+        }
+
+        .robot-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 140px;
+            color: #ffd700;
+            text-shadow: 0 0 30px #ffaa00;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            border: 2px solid #ff4444;
+            border-radius: 20px;
+            padding: 20px 30px;
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: center;
+            font-size: 28px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+        }
+
+        .personal-bot-box {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            border: 2px solid #00ff9d;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: center;
+            font-size: 26px;
+            line-height: 1.8;
+            box-shadow: 0 0 40px rgba(0, 255, 157, 0.3);
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            border: 3px solid #ffd700;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.4);
+        }
+
+        .price-title {
+            font-size: 40px;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .price-amount {
+            font-size: 60px;
+            background: linear-gradient(90deg, #ffd700, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 20px 0;
+        }
+
+        .contact-text {
+            font-size: 32px;
+            margin: 30px 0;
+        }
+
+        .phone-number {
+            font-size: 48px;
+            color: #00ff9d;
+            direction: ltr;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: twinkle 5s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.4); }
+        }
+
+        .rocket {
+            position: absolute;
+            width: 40px;
+            height: 80px;
+            background: linear-gradient(to top, #888 30%, #ddd 70%);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            opacity: 0;
+            z-index: 1;
+            animation: fly 8s linear forwards;
+        }
+
+        .rocket::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 60px;
+            background: linear-gradient(to bottom, orange, red, transparent);
+            border-radius: 50%;
+            filter: blur(8px);
+            animation: flame 0.3s infinite alternate;
+        }
+
+        @keyframes flame {
+            0% { height: 50px; opacity: 0.8; }
+            100% { height: 70px; opacity: 1; }
+        }
+
+        @keyframes fly {
+            0% { bottom: -100px; right: -100px; opacity: 0; transform: rotate(45deg); }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: -100px; left: -100px; opacity: 0; transform: rotate(45deg); }
+        }
     </style>
 </head>
 <body>
@@ -244,12 +502,8 @@
         </div>
 
         <div class="top-buttons">
-            <button class="top-btn" onclick="window.open('https://drive.google.com/file/d/1doulozm0rCNtp33L_7hH-w5qzUaXk78G/view?usp=drive_link','_blank')">
-                <i class="fas fa-download"></i> نصب هوش مصنوعی
-            </button>
-            <button class="top-btn" onclick="window.open('https://chat.cxgenie.ai?aid=1b6a6a5f-9730-4a0c-b697-8aaf7dc64617&lang=fa','_blank')">
-                <i class="fas fa-play-circle"></i> شروع آنلاین
-            </button>
+            <button class="top-btn"><i class="fas fa-download"></i> نصب هوش مصنوعی</button>
+            <button class="top-btn"><i class="fas fa-play-circle"></i> شروع آنلاین</button>
         </div>
 
         <div class="title-container">
@@ -263,12 +517,12 @@
             </button>
         </div>
 
-        <!-- دکمه‌های وسط -->
+        <!-- دکمه‌های وسط با لینک‌های مورد نظر -->
         <div class="middle-buttons">
-            <button class="middle-btn" onclick="window.open('https://drive.google.com/file/d/1doulozm0rCNtp33L_7hH-w5qzUaXk78G/view?usp=drive_link','_blank')">
+            <button class="middle-btn" onclick="window.open('https://drive.google.com/file/d/1doulozm0rCNtp33L_7hH-w5qzUaXk78G/view?usp=drive_link', '_blank')">
                 <i class="fas fa-download"></i> دانلود هوش مصنوعی
             </button>
-            <button class="middle-btn" onclick="window.open('https://chat.cxgenie.ai?aid=1b6a6a5f-9730-4a0c-b697-8aaf7dc64617&lang=fa','_blank')">
+            <button class="middle-btn" onclick="window.open('https://chat.cxgenie.ai?aid=1b6a6a5f-9730-4a0c-b697-8aaf7dc64617&lang=fa', '_blank')">
                 <i class="fas fa-play-circle"></i> استفاده آنلاین
             </button>
         </div>
@@ -276,8 +530,55 @@
         <div class="stars" id="stars-landing"></div>
     </section>
 
-    <!-- بخش قابلیت‌ها و ربات صبح دانش -->
-    <!-- ... همان کد قبلی بدون تغییر ... -->
+    <!-- بخش قابلیت‌ها -->
+    <section class="features-section">
+        <div class="globe-container">
+            <div class="globe"></div>
+
+            <div class="feature-item f1"><i class="fas fa-comments"></i> چت هوشمند فارسی</div>
+            <div class="feature-item f2"><i class="fas fa-brain"></i> یادگیری عمیق</div>
+            <div class="feature-item f3"><i class="fas fa-search"></i> جستجوی پیشرفته</div>
+            <div class="feature-item f4"><i class="fas fa-book"></i> دانش گسترده</div>
+            <div class="feature-item f5"><i class="fas fa-code"></i> کدنویسی خودکار</div>
+            <div class="feature-item f6"><i class="fas fa-lightbulb"></i> ایده‌پردازی خلاقانه</div>
+            <div class="feature-item f7"><i class="fas fa-chart-line"></i> تحلیل داده پیشرفته</div>
+            <div class="feature-item f8"><i class="fas fa-globe"></i> پشتیبانی چندزبانه</div>
+        </div>
+
+        <div class="stars" id="stars-features"></div>
+    </section>
+
+    <!-- بخش ربات صبح دانش -->
+    <section class="robot-section">
+        <h2 class="robot-title">ربات صبح دانش</h2>
+
+        <div class="robot-circle">
+            <i class="fas fa-robot robot-icon"></i>
+        </div>
+
+        <div class="warning-box">
+            هوش مصنوعی کاملا رایگان است ولی برای متصل کردن ربات آن به شرکت شما باید اشتراک تهیه کنیم
+        </div>
+
+        <div class="personal-bot-box">
+            شما میتوانید ربات شخصی داشته باشید که ادمین اینستاگرام و تلگرام شما باشد و پشتیبانی واتساپ و...<br><br>
+            این ربات به صورت ۲۴ ساعته پاسخگوی مشتریان شما خواهد بود<br>
+            تمام پیام‌های ورودی را مدیریت و دسته‌بندی می‌کند<br>
+            سفارش‌ها را ثبت و پیگیری می‌نماید<br>
+            به سوالات رایج به زبان طبیعی پاسخ می‌دهد<br>
+            و تجربه‌ای حرفه‌ای برای مشتریان شما ایجاد می‌کند
+        </div>
+
+        <div class="price-box">
+            <div class="price-title">هزینه اشتراک ماهانه</div>
+            <div class="price-amount">۲۰۰,۰۰۰ تومان</div>
+            <div class="contact-text">برای خرید و فعال‌سازی اشتراک</div>
+            <div class="contact-text">با این شماره تماس بگیرید:</div>
+            <div class="phone-number">09039304464</div>
+        </div>
+
+        <div class="stars" id="stars-robot"></div>
+    </section>
 
     <script>
         const chatURL = "https://chat.cxgenie.ai?aid=1b6a6a5f-9730-4a0c-b697-8aaf7dc64617&lang=fa";
@@ -294,7 +595,9 @@
                 setTimeout(typeWriter, 100);
             }
         }
-        window.onload = () => { typeWriter(); };
+        window.onload = () => {
+            typeWriter();
+        };
 
         function goToChat() {
             window.open(chatURL, '_blank');
